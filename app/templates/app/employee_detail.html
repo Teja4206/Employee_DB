@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Detail</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body, html {
+            height: 100%;
+        }
+        .center-page {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .card-img-top {
+            width: 100%;
+            height: 250px;
+            object-fit: contain;
+            border-radius: 10px;
+            background-color:"#fofofo"
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5 d-flex justify-content-center">
+        <div class="card shadow p-3" style="width: 350px; border-radius: 10px;">
+            <h4 class="text-center text-primary mb-3">Employee Details</h4>
+
+            <img src="{{ emp1.Photo.url }}" class="card-img-top mb-3" alt="Employee Photo">
+
+            <div class="card-body">
+                <p><strong>Name:</strong> {{ emp1.First_name }} {{ emp1.Last_name }}</p>
+                <p><strong>Designation:</strong> {{ emp1.Designation }}</p>
+                <p><strong>Email:</strong> {{ emp1.Email_address }}</p>
+                <p><strong>Phone Number:</strong> {{ emp1.Phone_number }}</p>
+
+                <div class="text-center mt-3">
+                    <a href="{% url 'home' %}" class="btn btn-primary">Back to Home</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

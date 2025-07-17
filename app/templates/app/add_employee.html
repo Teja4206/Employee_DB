@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <title>Document</title>
+    <style>
+        .container{
+           display:flex;
+           justify-content:center;
+           text-align:center;
+           height:100vh;
+        }
+        .form-data{
+            width: 100%;
+            max-width:500px;
+            max-height:500px;
+            padding:20px;
+            border:1px solid #ccc;
+            padding:20px;
+            background: #f9f9f9;
+        }     
+        .abc{
+            padding-battom:20px;
+        }    
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="form-data">
+          <h2 class="bg-success p-1 text-white">Add Employee</h2>
+          <form method="POST" enctype="multipart/form-data" class="pt-5">
+               {% csrf_token %}
+               {{form.as_p}}
+           <button class="btn btn-primary">Save</button>
+          </form>
+        </div>
+    </div>
+</body>
+</html>
